@@ -1,0 +1,6 @@
+﻿dotnet remove package Microsoft.EntityFrameworkCore.Sqlite
+
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite.Core
+
+dotnet add package SQLitePCLRaw.bundle_e_sqlite3
+

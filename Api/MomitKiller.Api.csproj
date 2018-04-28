@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Docs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="2.0.1" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="1.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\Middleware.cs" />
+    <Compile Remove="Models\Configuration.cs" />
+    <Compile Remove="Services\ConfigurationService.cs" />
+    <Compile Remove="AppConfig.cs" />
+    <Compile Remove="Models\RelayState.cs" />
+    <Compile Remove="AppHelper.cs" />
+    <Compile Remove="Migrations\20180213220910_initial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="MomitKiller.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MomitKiller.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
